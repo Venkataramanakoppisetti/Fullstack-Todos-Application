@@ -1,17 +1,10 @@
-// src/components/ProtectedRoute.js
-
-import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+// components/ProtectedRoute.js
+import { Navigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 const ProtectedRoute = ({ children, redirectTo }) => {
-  const { isAuthenticated } = useAuth();
-
-  if (!isAuthenticated) {
-    return <Navigate to={redirectTo} />;
-  }
-
-  return children ? children : <Outlet />;
+  const jwtToken = Cookies.get('jwt_token');
+  return jwtToken ? children : <Navigate to={redirectTo} />;
 };
 
 export default ProtectedRoute;

@@ -16,6 +16,27 @@
   color: #333;
 }
 
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.status-pending {
+  background-color: red;
+}
+
+.status-in-progress {
+  background-color: yellow;
+}
+
+.status-completed {
+  background-color: green;
+}
+
+
 .delete-icon {
   color: #ff4d4f;
   cursor: pointer;

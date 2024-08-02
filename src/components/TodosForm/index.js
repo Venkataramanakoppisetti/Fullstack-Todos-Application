@@ -30,10 +30,9 @@ function TodosForm({ onAdd }) {
 
       if (response.ok) {
         console.log('New Todo:', data);
-        onAdd(data);
+        onAdd(data); // Call onAdd with the new todo item
         setText('');
         setStatus('pending');
-        message.success('Todo added successfully.');
       } else {
         console.error('Error response:', data);
         message.error('Failed to add todo.');
